@@ -1,0 +1,17 @@
+{
+	"nodes":[
+		{"id":"742c3ed779a8df51","x":-98,"y":-127,"width":178,"height":87,"type":"text","text":"Make the diary app with electron."},
+		{"id":"979081609734e205","x":-314,"y":-372,"width":154,"height":92,"type":"text","text":"Write a book out of blogs (LinAlg, ML)"},
+		{"id":"b234e4e849a18cfd","x":-503,"y":-114,"width":163,"height":94,"type":"text","text":"Become authority on cloud testing"},
+		{"id":"4c48e358a3c3af1e","x":-255,"y":-170,"width":29,"height":10,"color":"3","type":"text","text":""},
+		{"id":"3df9e4449f4530af","x":-573,"y":0,"width":303,"height":97,"type":"text","text":"- Open source repos.\n- Papers and presentations.\n- Could make most money."},
+		{"id":"8173cdb207c25c70","x":-160,"y":-422,"width":340,"height":101,"type":"text","text":"- On linear algebra.\n- Build Obsidian vaults and sell them."}
+	],
+	"edges":[
+		{"id":"c9fca89e0b582420","fromNode":"4c48e358a3c3af1e","fromSide":"top","toNode":"979081609734e205","toSide":"bottom"},
+		{"id":"ae08173ce88a1b04","fromNode":"4c48e358a3c3af1e","fromSide":"bottom","toNode":"742c3ed779a8df51","toSide":"left"},
+		{"id":"0cd1c0e3f01f7e06","fromNode":"4c48e358a3c3af1e","fromSide":"bottom","toNode":"b234e4e849a18cfd","toSide":"right"},
+		{"id":"3cfe290c2dfc8f9d","fromNode":"b234e4e849a18cfd","fromSide":"bottom","toNode":"3df9e4449f4530af","toSide":"top"},
+		{"id":"a36605e7bb2df102","fromNode":"979081609734e205","fromSide":"top","toNode":"8173cdb207c25c70","toSide":"left"}
+	]
+}
