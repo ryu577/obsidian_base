@@ -6,5 +6,4 @@
 	- Numerical considerations.
 		- Examples of numerical instability and why its important for matrices.
 
-
 [[230923]]
