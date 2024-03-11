@@ -95,7 +95,7 @@ Adding those as faint arrows, we get the following state diagram:
 
 Now this becomes a continuous time Markov chain without absorbing states and it can be used to find the probability that we will be in any of the states at an arbitrary time in the future using the "Kolmogrov forward equations" as covered in theorem 6.2 of the book Introduction to probability models. But that is the subject of a future blog.
 
-#blog  #war #history #ukraine #math/prob #math/prob/markov 
+#building/blog  #war #history #ukraine #math/prob #math/prob/markov 
 created: 221118
 
 [[blogs]]

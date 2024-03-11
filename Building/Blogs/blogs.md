@@ -5,7 +5,7 @@
 Papers
 [[SuitcaseShuffle]]
 
-#blog #paper 
+#building/blog #paper 
 
 Equiangular
 ![[EquiAngular.png]]

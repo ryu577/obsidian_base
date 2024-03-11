@@ -1,5 +1,5 @@
-keywords: mortgage bank of america interest loan
-
+keywords: mortgage bank of america interest loan #finance 
+#building/blog 
 $a$: Principal remaining.
 $t$: Number of periods.
 $u$: Due per period.
@@ -8,26 +8,33 @@ $u$: Due per period.
 | -------- | -------- | -------- |  
 | $ar$ | $u-ar$ | $u$ |  
 | $(a-(u-ar))r$ | $u-(a-(u-ar))r = (u-ar)(1+r)$ | $u$ |
-
+$ar(1+r)-ur$
 
 Principal paid in period $i$ becomes: $(u-ar)(1+r)^{i-1}$
 $$\sum\limits_{i=1}^t (u-ar)(1+r)^{i-1} = a$$
 $$(u-ar)\left(\frac{(1+r)^t-1}{r}\right) = a$$
+
+
 # If t is fixed
 $$u-ar = \frac{ar}{(1+r)^t-1}$$
 $$u = ar\left(\frac{(1+r)^t}{(1+r)^t-1}\right) = \frac{ar}{1-(1+r)^{-t}}\tag{1}$$
 # If u is fixed
-$$(a+r)^t-1 = \frac{ar}{u-ar}$$
+$$(1+r)^t-1 = \frac{ar}{u-ar}$$
 $$(1+r)^t = \frac{u}{u-ar}$$
 $$t = \log_{1+r}\left(\frac{u}{u-ar}\right)$$
+
 # Frequent compounding
 If we compound $x$ times:
 $$\left(\frac{u}{x}-\frac{ar}{x}\right)\left(\frac{\left(1+\frac{r}{x}\right)^{t_1}-1}{\frac{r}{x}}\right)$$
 $u$ is given by equation (1)
+$$\begin{align}\left(1+\frac{r}{x}\right)^{t_1}=\frac{\frac{u}{x}}{\frac{u}{x}-a\frac{r}{x}}\\\left(1+r\right)^{t}=\frac{u}{u-ar}\end{align}$$
 
+
+$$\left(1+\frac{r}{x}\right)^{t_1}=\frac{\frac{u}{x}}{\frac{u}{x}-a\frac{r}{x}}$$
 $$\left(1+\frac{r}{x}\right)^{t_1}=\frac{u}{u-ar}$$
 $$t_1 = \log_{\left(1+\frac{r}{x}\right)}\left(\frac{u}{u-ar}\right)$$
 $$=\log_{\left(1+\frac{r}{x}\right)}\left(\frac{\left(\frac{ar}{1-(1+r)^{-t}}\right)}{\frac{ar}{1-(1+r)^{-t}}-ar}\right)$$
+$$\begin{align}t_1 = \log_{\left(1+\frac{r}{x}\right)}\left(\frac{u}{u-ar}\right)\\=\log_{\left(1+\frac{r}{x}\right)}\left(\frac{\left(\frac{ar}{1-(1+r)^{-t}}\right)}{\frac{ar}{1-(1+r)^{-t}}-ar}\right)\\=\log_{\left(1+\frac{r}{x}\right)}\left(1+r\right)^{t} \\= t.\log_{\left(1+\frac{r}{x}\right)}\left(1+r\right)\\=t.\frac{\log(1+r)}{\log(1+\frac{r}{x})}\end{align}$$
 
 - [ ] Share this to r/investing on reddit once done.
 
