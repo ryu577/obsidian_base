@@ -1,0 +1,6 @@
+- Linear algebra
+- ProbStats
+- Combinatorial optimization: NP-hard problems.
+	- Ch: [[BranchBound]]
+- Algorithms
+- AI

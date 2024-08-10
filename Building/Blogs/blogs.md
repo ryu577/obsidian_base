@@ -8,4 +8,4 @@ Papers
 #building/blog #paper 
 
 Equiangular
-![[EquiAngular.png]]
+![[EquiAngular.png#invert]]

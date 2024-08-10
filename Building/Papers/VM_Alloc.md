@@ -45,6 +45,10 @@ if __name__ == "__main__"
 ```
 block), the parameters from table-1 can be changed and the optimal tuple as well as the corresponding minimal probability is printed out.
 
+The number of points we have to iterate over: https://math.stackexchange.com/questions/4878197/estimating-the-number-of-integer-tuples-that-satisfy-a-linear-inequality/4878678?noredirect=1#comment10404819_4878678
+
+# The objective function
+The objective function in its current form is very inefficient. This is because we need to calculate the Binomial PMF's for all the integer tuples corresponding to the event within the probability expression in equation (2). This can be mitigated by approximating the binomial distributions with normal distributions. The vector, $\eta = [N_1, N_2 \dots N_k]$ is a multivariate normal with a diagonal covariance matrix. Also, $\vec{c}^T \eta$ is a univariate Gaussian with mean $\vec{c}^T \mu$ and variance $\vec{c}^T\Sigma \vec{c}$. This can be used to calculate the objective function very efficiently since it is simply the CDF of this Gaussian at $c$.
 # Experiments
 ## Experiment 1
 Say we have 4 VMSKUs. The table below shows the various parameters.
@@ -65,9 +69,12 @@ Now the optimal provisioning becomes requesting $4$ VMs of type-2 and $1$ VM of 
 Finally, let's increase our budget. Instead of $m=10.4$, let's make it $m=13$. Our optimal allocation now becomes $n_1=1,n_2=5,n_3=0,n_4=1$ and the probability of failure to get $c=8$ cores is now $0.114$.
 
 # Efficiency considerations
+![[Screenshot 2024-03-24 at 12.12.16 AM.png#invert|400]]
 The code in appendix-1 as it stands isn't very efficient and doesn't scale well with the number of VMSKUs (see [4](https://math.stackexchange.com/questions/4878197/estimating-the-number-of-integer-tuples-that-satisfy-a-linear-inequality/4878678#4878678)). This can easily be rectified. For calculating the objective function, we don't have to loop over all points that satisfy equation (2). Instead, we can approximate the multivariate Binomial with a multivariate Gaussian and calculate its probability mass beyond the hyper-plane. This is discussed in [2](https://math.stackexchange.com/questions/4878751/area-of-a-multivariate-gaussian-beyond-a-hyperplane). Further, we don't need to evaluate all the points that satisfy equation (1). It can be shown that it one tuple of $n_i$'s is greater than or equal to another tuple for every $i$, it's guaranteed to have a better objective function (given by (2)). So, we can eliminate a lot of points from consideration this way.
 
 Further, notice that the code uses a depth first approach on a conceptual tree that builds the tuples. This tree can be actively pruned according to the criterion of the branch and bound algorithm, [6](https://en.wikipedia.org/wiki/Branch_and_bound#:~:text=A%20best%2Dfirst%20branch%20and,and%20its%20descendant%20A*%20search.) to get us a much more efficient heuristic.
+
+See here: https://math.stackexchange.com/questions/4878751/area-of-a-multivariate-gaussian-beyond-a-hyperplane?noredirect=1#comment10405370_4878751
 
 # References
 [1](https://math.stackexchange.com/questions/4878096/approximating-the-probability-that-a-linear-combination-of-binomials-will-be-les?noredirect=1#comment10404452_4878096) Approximate probability for a linear combination of Binomials.
@@ -162,5 +169,5 @@ if __name__ == "__main__":
     print(minn)
 
 ```
-
+keywords: #python code pankaj gaussian multivariate
 
