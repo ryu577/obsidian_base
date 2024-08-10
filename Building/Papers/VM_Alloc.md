@@ -169,5 +169,8 @@ if __name__ == "__main__":
     print(minn)
 
 ```
+<<<<<<< HEAD
 keywords: #python code pankaj gaussian multivariate
 
+=======
+>>>>>>> 0f9428af59a798512e3dd0ab5a8f4533bf1626f7
